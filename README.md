@@ -1,4 +1,4 @@
-underscore.deepclone.js
+underscore.deepclone
 =======================
 
 ```javascript
