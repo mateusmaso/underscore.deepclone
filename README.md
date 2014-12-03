@@ -1,6 +1,7 @@
 underscore.deepclone [![Build Status](https://travis-ci.org/mateusmaso/underscore.deepclone.svg?branch=master)](https://travis-ci.org/mateusmaso/underscore.deepclone)
 =======================
-This library is an extension for Underscore which allows cloning objects recursively until the pointer tree ends. However, if your object has circular reference it could lead into an infite loop.
+
+This library is an extension for Underscore which allows cloning objects recursively until the pointer tree ends. However, if your object has circular reference it could lead into an infinite loop.
 
 ## Features
 
@@ -8,7 +9,7 @@ This library is an extension for Underscore which allows cloning objects recursi
 
 ## Dependencies
 
-* underscore.js (>= 1.5)
+* underscore.js (>= 1.5.0)
 
 ## Node
 
