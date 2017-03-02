@@ -11,18 +11,20 @@
 
 }(this, function(_) {
 
-  return {
-    deepClone: function(object) {
+  var deepClone = function(object) {
       var clone = _.clone(object);
 
       _.each(clone, function(value, key) {
         if (_.isObject(value)) {
-          clone[key] = _.deepClone(value);
+          clone[key] = deepClone(value);
         }
       });
 
       return clone;
-    }
+    };
+
+  return {
+    deepClone: deepClone
   };
 
 }));
