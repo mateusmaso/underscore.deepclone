@@ -12,16 +12,16 @@
 }(this, function(_) {
 
   var deepClone = function(object) {
-      var clone = _.clone(object);
+    var clone = _.clone(object);
 
-      _.each(clone, function(value, key) {
-        if (_.isObject(value)) {
-          clone[key] = deepClone(value);
-        }
-      });
+    _.each(clone, function(value, key) {
+      if (_.isObject(value)) {
+        clone[key] = deepClone(value);
+      }
+    });
 
-      return clone;
-    };
+    return clone;
+  };
 
   return {
     deepClone: deepClone
