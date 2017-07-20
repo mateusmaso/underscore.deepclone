@@ -1,8 +1,8 @@
 // underscore.deepclone
 // --------------------
-// v0.1.1
+// v0.1.3
 //
-// Copyright (c) 2013-2014 Mateus Maso
+// Copyright (c) 2013-2017 Mateus Maso
 // Distributed under MIT license
 //
 // http://github.com/mateusmaso/underscore.deepclone
@@ -20,18 +20,20 @@
 
 }(this, function(_) {
 
+  var deepClone = function(object) {
+    var clone = _.clone(object);
+
+    _.each(clone, function(value, key) {
+      if (_.isObject(value)) {
+        clone[key] = deepClone(value);
+      }
+    });
+
+    return clone;
+  };
+
   return {
-    deepClone: function(object) {
-      var clone = _.clone(object);
-
-      _.each(clone, function(value, key) {
-        if (_.isObject(value)) {
-          clone[key] = _.deepClone(value);
-        }
-      });
-
-      return clone;
-    }
+    deepClone: deepClone
   };
 
 }));
